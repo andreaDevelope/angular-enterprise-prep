@@ -40,6 +40,7 @@ module.exports = defineConfig([
           style: 'kebab-case',
         },
       ],
+      '@angular-eslint/prefer-inject': 'off',
     },
   },
   {

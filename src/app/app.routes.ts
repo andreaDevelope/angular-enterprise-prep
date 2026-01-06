@@ -1,10 +1,12 @@
 import { Routes } from '@angular/router';
-import { UserService } from './core/user/user.service';
 
 export const routes: Routes = [
   {
     path: '',
-    providers: [UserService],
-    loadComponent: () => import('./pages/test/test.component').then((m) => m.TestComponent),
+    loadChildren: () => import('./features/home/home.routes').then((m) => m.homeRoutes),
+  },
+  {
+    path: 'test',
+    loadChildren: () => import('./features/users/users.routes').then((m) => m.usersRoutes),
   },
 ];

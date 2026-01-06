@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { UserService } from '../../core/user/user.service';
 
 @Component({
-  standalone: true,
-  selector: 'app-test',
-  imports: [],
-  templateUrl: './test.component.html',
-  styleUrl: './test.component.scss',
+  selector: 'app-home',
+  imports: [RouterModule],
+  templateUrl: './home.component.html',
+  styleUrl: './home.component.scss',
 })
-export class TestComponent implements OnInit {
+export class HomeComponent implements OnInit {
   constructor(private userService: UserService) {}
 
   ngOnInit() {

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { UserService } from '../../core/user/user.service';
 import { RouterModule } from '@angular/router';
 
@@ -9,10 +9,14 @@ import { RouterModule } from '@angular/router';
   templateUrl: './test.component.html',
   styleUrl: './test.component.scss',
 })
-export class TestComponent implements OnInit {
+export class TestComponent implements OnInit, OnDestroy {
   constructor(private userService: UserService) {}
 
   ngOnInit() {
     console.log(this.userService.getId());
+  }
+
+  ngOnDestroy() {
+    console.log('Test Distrutto');
   }
 }

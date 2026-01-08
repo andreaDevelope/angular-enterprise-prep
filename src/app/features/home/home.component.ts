@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { UserService } from '../../core/user/user.service';
 
@@ -8,10 +8,14 @@ import { UserService } from '../../core/user/user.service';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
   constructor(private userService: UserService) {}
 
   ngOnInit() {
     console.log(this.userService.getId());
+  }
+
+  ngOnDestroy() {
+    console.log('Home Distrutto');
   }
 }
